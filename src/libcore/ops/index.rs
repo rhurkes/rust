@@ -58,7 +58,7 @@
 #[doc(alias = "]")]
 #[doc(alias = "[")]
 #[doc(alias = "[]")]
-pub trait Index<Idx: ?Sized> {
+pub trait Index<Idx> {
     /// The returned type after indexing.
     #[stable(feature = "rust1", since = "1.0.0")]
     type Output: ?Sized;
@@ -163,7 +163,7 @@ see chapter in The Book <https://doc.rust-lang.org/book/ch08-02-strings.html#ind
 #[doc(alias = "[")]
 #[doc(alias = "]")]
 #[doc(alias = "[]")]
-pub trait IndexMut<Idx: ?Sized>: Index<Idx> {
+pub trait IndexMut<Idx>: Index<Idx> {
     /// Performs the mutable indexing (`container[index]`) operation.
     #[stable(feature = "rust1", since = "1.0.0")]
     fn index_mut(&mut self, index: Idx) -> &mut Self::Output;
